@@ -101,6 +101,29 @@ catalog:
         #   token:
         #     $secret:
         #       env: GHE_PRIVATE_TOKEN
+    ldapOrg:
+      ### Example for how to add your enterprise LDAP server
+      # providers:
+      #   - target: ldaps://ds.example.net
+      #     baseDn: ou=example,dc=example,dc=net
+      #     bind:
+      #       dn: uid=ldap-reader-user,ou=people
+      #       secret: { $secret: { env: LDAP_SECRET } }
+      #     users:
+      #       dn: ou=users
+      #       rdn: uid
+      #       filter: (objectClass=our-person-tag)
+      #       mapping:
+      #         name: cn
+      #     groups:
+      #       dn: ou=groups
+      #       rdn: cn
+      #       filter: (objectClass=our-group-tag)
+      #       mapping:
+      #         name: cn
+      #         type: groupType
+      #         description: groupName
+      #         members: member
     bitbucketApi:
       username:
         $secret:
